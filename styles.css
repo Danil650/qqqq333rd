@@ -1,23 +1,30 @@
 .orbit {
-  width: 8px;
-  height: 8px;
-  position: absolute;
-  border-style: solid;
-  border-radius: 100%;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    border-style: solid;
+    border-radius: 100%;
 }
 
 #central-orbit {
-
+    top: 100px;
+    background-color: black;
+    border-color: black;
 }
 
 #low-orbit {
-
+    top: 200px;
+    background-color: red;
+    border-color: red;
 }
 
 #mid-orbit {
-
+    top: 300px;
+    border-width: 1px;
 }
 
 #high-orbit {
-    
+    top: 400px;  
+    background-color: blue;
+    border-color: blue;
 }
