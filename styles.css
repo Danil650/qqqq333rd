@@ -6,6 +6,16 @@
     border-radius: 100%;
 }
 
+.circle {
+    border-style: solid;
+    border-radius: 100%;
+    position: absolute;
+    left: 437px;
+    border-color: red;
+    height: 996px;
+    width: 996px;
+}
+
 #central-orbit {
     background-color: black;
     border-color: black;
@@ -28,8 +38,8 @@
     animation: rotate 2s linear infinite;
 } 
 
-/* @keyframes rotate {
+@keyframes rotate {
     to {
         transform: rotate(360deg)
     }
-} */
+}

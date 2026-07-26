@@ -1,4 +1,4 @@
-import { randomPosition } from "./functions.js";
+import { randomPosition, getSpeed } from "./functions.js";
 
 //orbits
 const centralOrbit = document.getElementById("central-orbit");
@@ -9,25 +9,39 @@ const highOrbit = document.getElementById("high-orbit");
 const orbits = [lowOrbit, midOrbit, highOrbit]
 
 // constants
-const radius = Math.ceil(window.innerHeight/2);
 const maxOrbitSize = 64;
 const minOrbitSize = 8;
+const halfWidth = Math.ceil(window.innerWidth/2)
+const halfHeight = Math.ceil(window.innerHeight/2);
 
 // speed
-const speed = 30;
+let speed;
 
-centralOrbit.style.left = `${Math.ceil(window.innerWidth/2)}px`;
-centralOrbit.style.top = `${radius}px`;
+centralOrbit.style.left = `${halfWidth}px`;
+centralOrbit.style.top = `${halfHeight}px`;
 
 for (const orbit of orbits) {
-    const [x, y] = randomPosition(radius, radius, radius);
-    orbit.style.left = `${x + (Math.ceil(window.innerWidth/2) - radius)}px`;
-    orbit.style.top = `${y}px`;
+    const [x, y] = randomPosition(halfWidth, halfHeight, halfHeight);
+    const orbitX = `${x}px`;
+    const orbitY = `${y}px`;
 
-    const originX = Math.ceil(window.innerWidth/2) - x;
-    const originY = Math.ceil(window.innerHeight/2) - y;
+    orbit.style.left = orbitX;
+    orbit.style.top = orbitY;
+
+
+    
+
+    const vectorLenght = Math.sqrt( (Math.pow(x - halfWidth, 2)) + (Math.pow(y - halfHeight, 2)) );
+
+    speed = getSpeed();
+
+    orbit.style.animationDuration = `${orbit.style.animationDuration / speed}s`;
+
+    const originX = halfWidth - orbitX.split(`px`)[0];
+    const originY = halfHeight - orbitY.split(`px`)[0];
 
     orbit.style.transformOrigin = `${originX}px ${originY}px`
+    setTimeout( () => {}, 0.3)
 }
 
 
