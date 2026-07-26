@@ -4,18 +4,27 @@
     position: absolute;
     border-style: solid;
     border-radius: 100%;
+    animation: rotate 30s linear infinite;
 }
 
 #central-orbit {
     top: 100px;
     background-color: black;
     border-color: black;
+    animation: rotate 30s linear infinite;
 }
 
 #low-orbit {
     top: 200px;
     background-color: red;
     border-color: red;
+    animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg)
+    }
 }
 
 #mid-orbit {
@@ -27,4 +36,4 @@
     top: 400px;  
     background-color: blue;
     border-color: blue;
-}
+} 
