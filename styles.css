@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 .orbit {
     width: 8px;
     height: 8px;
@@ -10,10 +14,11 @@
     border-style: solid;
     border-radius: 100%;
     position: absolute;
-    left: 437px;
+    left: 25vw;
+    top: 0vw;
     border-color: red;
-    height: 996px;
-    width: 996px;
+    height: 50vw;
+    width: 50vw;
 }
 
 #central-orbit {
@@ -36,7 +41,7 @@
     background-color: blue;
     border-color: blue;
     animation: rotate 2s linear infinite;
-} 
+}
 
 @keyframes rotate {
     to {
